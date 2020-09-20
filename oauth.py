@@ -20,7 +20,6 @@ class GoogleOAuth:
         self.SERVICE_ACCOUNT_KEY_PATH = SERVICE_ACCOUNT_KEY_PATH
         self.SERVER_AUTH = SERVER_AUTH
 
-
     def run_oauth_flow(self):
         """
         Get credentials to authorize for a Google API.
@@ -105,5 +104,4 @@ class GoogleOAuth:
             A service that is connected to the specified API.
         """
         service = build(self.SERVICE_NAME, self.SERVICE_VERSION, credentials=credentials)
-        #print("Happy data pulling with your '{} {}' service.".format(self.SERVICE_NAME.capitalize(), self.SERVICE_VERSION.capitalize()))
         return service

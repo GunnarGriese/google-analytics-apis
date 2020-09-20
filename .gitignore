@@ -1,5 +1,7 @@
 __pycache__
 *.pyc
+*.json
+readinglist.txt
 .DS_Store
 /credentials
 /.vscode

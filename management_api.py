@@ -10,12 +10,10 @@ class Filter:
         self.rank = f_rank
 
 class AnalyticsManagement:
-    API_VER = 'v3'
-    API_NAME = 'analytics'
 
-    def __init__(self, account_id=None, property_id=None, view_id=None, creds=creds):
-        credentials = creds
-        self.analytics = googleapiclient.discovery.build(self.API_NAME, self.API_VER, credentials=credentials)
+    def __init__(self, service_config, account_id=None, property_id=None, view_id=None):
+        creds = service_config.run_oauth_flow()
+        self.analytics = service_config.build_service(creds)
         self.account_id = account_id
         self.property_id = property_id
         self.view_id = view_id
@@ -23,7 +21,7 @@ class AnalyticsManagement:
     def list_accounts(self):
         """returns a list of management.accountSummaries Resource"""
         accounts = self.analytics.management().accounts().list().execute()
-        return accounts.get('items', [])
+        return accounts, accounts.get('items', [])
 
     def list_account_users(self):
         users = self.analytics.management().accountUserLinks().list(accountId=self.account_id).execute()
