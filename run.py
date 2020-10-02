@@ -14,12 +14,16 @@ service_config = GoogleOAuth(
 
 # Build service
 api_service = AnalyticsManagement(
-    service_config, account_id="152079293", property_id="UA-152079293-1", view_id="205698058")
+    service_config, account_id="130829", property_id="UA-130829-38", view_id="119395418")
 
 # Get list of all accounts
 accounts, account_items = api_service.list_accounts()
 print(accounts)
 
 # Access specific property
-prop = api_service.get_property()
-print(prop)
+#prop = api_service.get_property()
+# print(prop)
+
+# Access goals for view
+goals = api_service.get_goals()
+print(goals)

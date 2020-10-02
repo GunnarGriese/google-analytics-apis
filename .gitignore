@@ -5,3 +5,4 @@ readinglist.txt
 .DS_Store
 /credentials
 /.vscode
+test_*
