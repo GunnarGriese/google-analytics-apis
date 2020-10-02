@@ -41,4 +41,4 @@ TBD
 ## Ressources
 
 Check [GA Management API Reference](https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference) for all available functionality.
-Check Python [examples from Google] (https://github.com/googleapis/google-api-python-client/blob/master/samples/analytics/management_v3_reference.py).
+Check Python [examples from Google](https://github.com/googleapis/google-api-python-client/blob/master/samples/analytics/management_v3_reference.py).
