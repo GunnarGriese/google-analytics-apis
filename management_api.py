@@ -82,9 +82,17 @@ class AnalyticsManagement:
         return filter_dict
 
     def get_goals(self):
-        """Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals#resource """
+        """ Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals#resource """
         goals = self.analytics.management().goals().list(
             accountId=self.account_id,
             webPropertyId=self.property_id,
             profileId=self.view_id).execute()
         return goals.get('items', [])
+
+    def get_audiences(self):
+        """ Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience#resource """
+        audiences = self.analytics.management().remarketingAudience().list(
+            accountId='123456',
+            webPropertyId='UA-123456-1'
+        ).execute()
+        return audiences.get('items', [])
