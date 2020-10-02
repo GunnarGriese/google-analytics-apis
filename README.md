@@ -12,7 +12,7 @@ TBD
 
 ### Account Settings
 
-- [ ] List accounts, properties, views associated with the authenticated account
+- [x] List accounts, properties, views associated with the authenticated account
 - [ ] Account permissions of authenticated user
 - [ ] List of account level filters
 
@@ -35,7 +35,7 @@ TBD
 - [ ] List of Excluded URL parameters
 - [ ] List of Query Parameters (enabling Site Search reports)
 - [ ] Check if Query Parameters are stripped from page dimension
-- [ ] List of goals (& their configuration)
+- [x] List of goals (& their configuration)
 - [ ] Channel Grouping Settings
 
 ## Ressources
