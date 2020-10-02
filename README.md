@@ -38,6 +38,6 @@ TBD
 - [ ] List of goals (& their configuration)
 - [ ] Channel Grouping Settings
 
-# Ressources
+## Ressources
 
 Check [GA Management API Reference](https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference) for all available functionality.
