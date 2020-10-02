@@ -12,16 +12,16 @@ TBD
 
 ### Account Settings
 
-- [ ] List accounts, properties, views associated with the authenticated account
-- [ ] Account permissions of authenticated user
-- [ ] List of account level filters
+- [x] List accounts, properties, views associated with the authenticated account
+- [x] Account permissions of authenticated user
+- [x] List of account level filters
 
 ### Property Settings
 
 - [ ] List of referral exclusions
 - [ ] Data Retention Settings
 - [ ] List of linked Google Ads accounts (& other GMP products)
-- [ ] List of available audiences
+- [x] List of available audiences
 - [ ] Check if Advertising Features / Google Signals is enabled
 - [ ] List of Custom Dimensions & Metrics
 - [ ] List of Data Import files
@@ -35,7 +35,7 @@ TBD
 - [ ] List of Excluded URL parameters
 - [ ] List of Query Parameters (enabling Site Search reports)
 - [ ] Check if Query Parameters are stripped from page dimension
-- [ ] List of goals (& their configuration)
+- [x] List of goals (& their configuration)
 - [ ] Channel Grouping Settings
 
 ## Ressources

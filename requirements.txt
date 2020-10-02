@@ -1,4 +1,4 @@
-google-auth
-google_auth_oauthlib
+google-auth=1.22.0
+google_auth_oauthlib=0.4.1
 oauth2client
 google-api-python-client
