@@ -81,7 +81,7 @@ class AnalyticsManagement:
 
         return filter_dict
 
-    def get_goals(self):
+    def list_goals(self):
         """ Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals#resource """
         goals = self.analytics.management().goals().list(
             accountId=self.account_id,
@@ -89,10 +89,38 @@ class AnalyticsManagement:
             profileId=self.view_id).execute()
         return goals.get('items', [])
 
-    def get_audiences(self):
-        """ Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience#resource """
+    def list_audiences(self):
+        """ Returns a list of audiences as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience#resource """
         audiences = self.analytics.management().remarketingAudience().list(
-            accountId='123456',
-            webPropertyId='UA-123456-1'
+            accountId=self.account_id,
+            webPropertyId=self.property_id
         ).execute()
         return audiences.get('items', [])
+
+    def list_custom_dimensions(self):
+        """ Returns a list of custom dimensions as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDimensions#resource """
+        dimensions = self.analytics.management().customDimensions().list(
+            accountId=self.account_id,
+            webPropertyId=self.property_id).execute()
+        return dimensions.get('items', [])
+
+    def list_custom_metrics(self):
+        """ Returns a list of custom dimensions as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customMetrics#resource """
+        metrics = self.analytics.management().customMetrics().list(
+            accountId=self.account_id,
+            webPropertyId=self.property_id).execute()
+        return metrics.get('items', [])
+
+    def list_custom_data(self):
+        """ Returns a list of custom data sources as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/customDataSources#resource """
+        custom_data_sources = self.analytics.management().customDataSources().list(
+            accountId=self.account_id,
+            webPropertyId=self.property_id).execute()
+        return custom_data_sources.get('items', [])
+
+    def list_views(self):
+        """ Returns a list of views as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/profiles#resource """
+        views = self.analytics.management().profiles().list(
+            accountId=self.account_id,
+            webPropertyId=self.property_id).execute()
+        return views.get('items', [])
