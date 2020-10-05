@@ -103,7 +103,15 @@ class AnalyticsManagement:
     def get_audiences(self):
         """ Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience#resource """
         audiences = self.analytics.management().remarketingAudience().list(
-            accountId='123456',
-            webPropertyId='UA-123456-1'
+            accountId=self.account_id,
+            webPropertyId=self.property_id'
         ).execute()
         return audiences.get('items', [])
+
+    def get_uploads(self):
+        "Returns a list of uploads as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/uploads"
+        uploads = self.analytics.management().uploads().list(
+            accountId=self.account_id,
+            webPropertyId=self.property_id
+        ).execute()
+        return uploads.get('items', [])
