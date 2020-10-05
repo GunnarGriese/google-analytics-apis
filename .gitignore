@@ -6,3 +6,4 @@ readinglist.txt
 /credentials
 /.vscode
 venv/
+test_*

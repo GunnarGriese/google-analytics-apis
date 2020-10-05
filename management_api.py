@@ -10,7 +10,6 @@ class Filter:
         self.details = f_details
         self.rank = f_rank
 
-
 class AnalyticsManagement:
     def __init__(self, service_config, account_id=None, property_id=None, view_id=None):
         creds = service_config.run_oauth_flow()
@@ -25,22 +24,14 @@ class AnalyticsManagement:
         return accounts, accounts.get("items", [])
 
     def list_account_users(self):
-        users = (
-            self.analytics.management()
-            .accountUserLinks()
-            .list(accountId=self.account_id)
-            .execute()
-        )
-        return users.get("items", [])
+        users = self.analytics.management().accountUserLinks().list(
+            accountId=self.account_id).execute()
+        return users.get('items', [])
 
     def list_account_filters(self):
-        filters = (
-            self.analytics.management()
-            .filters()
-            .list(accountId=self.account_id)
-            .execute()
-        )
-        return filters.get("items", [])
+        filters = self.analytics.management().filters().list(
+            accountId=self.account_id).execute()
+        return filters.get('items', [])
 
     def get_property(self):
         """per default pre-defined property is returned"""
@@ -100,3 +91,19 @@ class AnalyticsManagement:
             filter_dict.append(filter_ins)
 
         return filter_dict
+
+    def get_goals(self):
+        """ Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/goals#resource """
+        goals = self.analytics.management().goals().list(
+            accountId=self.account_id,
+            webPropertyId=self.property_id,
+            profileId=self.view_id).execute()
+        return goals.get('items', [])
+
+    def get_audiences(self):
+        """ Returns a list of goals as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/remarketingAudience#resource """
+        audiences = self.analytics.management().remarketingAudience().list(
+            accountId='123456',
+            webPropertyId='UA-123456-1'
+        ).execute()
+        return audiences.get('items', [])

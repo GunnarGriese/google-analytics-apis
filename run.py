@@ -22,5 +22,9 @@ accounts, account_items = api_service.list_accounts()
 print(accounts)
 
 # Access specific property
-prop = api_service.get_property()
-print(prop)
+#prop = api_service.get_property()
+# print(prop)
+
+# Access goals for view
+goals = api_service.get_goals()
+print(goals)
