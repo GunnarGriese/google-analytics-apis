@@ -124,3 +124,11 @@ class AnalyticsManagement:
             accountId=self.account_id,
             webPropertyId=self.property_id).execute()
         return views.get('items', [])
+
+    def list_google_ads(self):
+        """ Returns a list of all linked G Ads accounts as specified here: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/webPropertyAdWordsLinks#resource """
+        adWordsLinks = self.analytics.management().webPropertyAdWordsLinks().list(
+            accountId=self.account_id,
+            webPropertyId=self.property_id
+        ).execute()
+        return adWordsLinks.get("items", [])
